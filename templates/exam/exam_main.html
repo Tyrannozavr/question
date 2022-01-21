@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questions</title>
+</head>
+<body>
+    <h1>Список вопросов:</h1>
+    {% for question in questions %}
+        <h4>{{ question }} <a href="edit/{{ question }}/">выучил!</a></h4>
+    {% endfor %}
+    <h1>выучено:</h1>
+    {% for i in learned %}
+        <h4>{{ i }}</h4>
+    {% endfor %}
+</body>
+</html>
