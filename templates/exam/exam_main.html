@@ -5,10 +5,12 @@
     <title>Questions</title>
 </head>
 <body>
+    <h1><a href="{% url 'index' %}">На главную</a></h1>
+    {% if questions %}
     <h1>Список вопросов:</h1>
 {#    <h2>Выучено: {{ percent }}% </h2>#}
-    <h2>Шанс того, что выпадет один вопрос из выученных {{ percent }}</h2>
-    <h2>Шанс того, что выпадут оба вопроса из выученных {{ percent2 }}</h2>
+    <h2>Шанс того, что выпадет один вопрос из выученных {{ percent }}%</h2>
+    <h2>Шанс того, что выпадут оба вопроса из выученных {{ percent2 }}%</h2>
     <h2>Осталось: {{ remains }} мин. То есть на каждый вопрос: {{ quest }}</h2>
     {% for question in questions %}
         <h4>{{ question }} <a href="edit/{{ question }}/">выучил!</a></h4>
@@ -17,5 +19,8 @@
     {% for i in learned %}
         <h4>{{ i }}</h4>
     {% endfor %}
+    {% else %}
+        <h1 style="color: red">До сессии далеко!!!</h1>
+    {% endif %}
 </body>
 </html>
